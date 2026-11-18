@@ -1,0 +1,256 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.ytclient.watch"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="30"
+9        android:targetSdkVersion="36" />
+10
+11    <uses-feature android:name="android.hardware.type.watch" />
+11-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:5:5-64
+11-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:5:19-61
+12    <uses-feature
+12-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:6:5-91
+13        android:name="android.hardware.screen.round"
+13-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:6:19-63
+14        android:required="false" />
+14-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:6:64-88
+15
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:8:5-67
+16-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:8:22-64
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:9:5-79
+17-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:9:22-76
+18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+18-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:10:5-77
+18-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:10:22-74
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+19-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:11:5-92
+19-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:11:22-89
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:12:5-68
+20-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:12:22-65
+21    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+21-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:13:5-71
+21-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:13:22-68
+22    <uses-permission android:name="android.permission.VIBRATE" />
+22-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:14:5-66
+22-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:14:22-63
+23
+24    <permission
+24-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+25        android:name="com.ytclient.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.ytclient.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:16:5-75:19
+31        android:name="com.ytclient.watch.YTWatchApplication"
+31-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:17:9-43
+32        android:allowBackup="true"
+32-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:18:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:icon="@mipmap/ic_launcher"
+36-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:19:9-43
+37        android:label="@string/app_name"
+37-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:20:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:21:9-54
+39        android:supportsRtl="true"
+39-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:22:9-35
+40        android:theme="@style/Theme.YTWatch" >
+40-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:23:9-45
+41        <uses-library
+41-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:26:9-28:39
+42            android:name="com.google.android.wearable"
+42-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:27:13-55
+43            android:required="true" />
+43-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:28:13-36
+44
+45        <meta-data
+45-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:30:9-32:36
+46            android:name="com.google.android.wearable.standalone"
+46-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:31:13-66
+47            android:value="true" />
+47-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:32:13-33
+48
+49        <activity
+49-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:34:9-56:20
+50            android:name="com.ytclient.watch.ui.MainActivity"
+50-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:35:13-44
+51            android:exported="true"
+51-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:36:13-36
+52            android:label="@string/app_name"
+52-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:37:13-45
+53            android:screenOrientation="portrait"
+53-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:39:13-49
+54            android:theme="@style/Theme.YTWatch"
+54-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:38:13-49
+55            android:windowSoftInputMode="adjustResize" >
+55-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:40:13-55
+56            <intent-filter>
+56-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:42:13-45:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:43:17-69
+57-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:43:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:17-77
+59-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:27-74
+60            </intent-filter>
+61            <intent-filter>
+61-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:47:13-55:29
+62                <action android:name="android.intent.action.VIEW" />
+62-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:48:17-69
+62-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:48:25-66
+63
+64                <category android:name="android.intent.category.DEFAULT" />
+64-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:17-76
+64-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:27-73
+65                <category android:name="android.intent.category.BROWSABLE" />
+65-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:17-78
+65-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:27-75
+66
+67                <data android:scheme="vnd.youtube" />
+67-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-54
+67-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:23-51
+68                <data
+68-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-54
+69                    android:host="www.youtube.com"
+69-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:46-76
+70                    android:scheme="https" />
+70-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:23-51
+71                <data
+71-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-54
+72                    android:host="youtube.com"
+72-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:46-76
+73                    android:scheme="https" />
+73-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:23-51
+74                <data
+74-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-54
+75                    android:host="m.youtube.com"
+75-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:46-76
+76                    android:scheme="https" />
+76-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:23-51
+77            </intent-filter>
+78        </activity>
+79
+80        <service
+80-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:58:9-66:19
+81            android:name="com.ytclient.watch.media.YTMediaSessionService"
+81-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:59:13-56
+82            android:exported="true"
+82-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:60:13-36
+83            android:foregroundServiceType="mediaPlayback" >
+83-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:61:13-58
+84            <intent-filter>
+84-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:62:13-65:29
+85                <action android:name="androidx.media3.session.MediaSessionService" />
+85-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:63:17-86
+85-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:63:25-83
+86                <action android:name="android.media.browse.MediaBrowserService" />
+86-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:64:17-83
+86-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:64:25-80
+87            </intent-filter>
+88        </service>
+89
+90        <receiver
+90-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:68:9-74:20
+91            android:name="com.ytclient.watch.media.MediaButtonReceiver"
+91-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:69:13-54
+92            android:exported="true" >
+92-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:70:13-36
+93            <intent-filter>
+93-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:71:13-73:29
+94                <action android:name="android.intent.action.MEDIA_BUTTON" />
+94-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:72:17-77
+94-->D:\YTClientWatch\app\src\main\AndroidManifest.xml:72:25-74
+95            </intent-filter>
+96        </receiver>
+97
+98        <activity
+98-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+99            android:name="androidx.compose.ui.tooling.PreviewActivity"
+99-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+100            android:exported="true" />
+100-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+101
+102        <provider
+102-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:24:9-32:20
+103            android:name="androidx.startup.InitializationProvider"
+103-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:25:13-67
+104            android:authorities="com.ytclient.watch.androidx-startup"
+104-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:26:13-68
+105            android:exported="false" >
+105-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:27:13-37
+106            <meta-data
+106-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+107-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
+108                android:value="androidx.startup" />
+108-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+110-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+111                android:value="androidx.startup" />
+111-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+112            <meta-data
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+114                android:value="androidx.startup" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+115        </provider>
+116
+117        <receiver
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+118            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+119            android:directBootAware="false"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+120            android:enabled="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+121            android:exported="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+122            android:permission="android.permission.DUMP" >
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+124                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+127                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+130                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+131            </intent-filter>
+132            <intent-filter>
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+133                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+134            </intent-filter>
+135        </receiver>
+136    </application>
+137
+138</manifest>

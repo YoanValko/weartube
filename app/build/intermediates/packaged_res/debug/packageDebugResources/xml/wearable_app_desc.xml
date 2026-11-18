@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wearableAppConfiguration xmlns:android="http://schemas.android.com/apk/res/android">
+    <versionCode>1</versionCode>
+    <versionName>1.0</versionName>
+    <packageName>com.ytclient.watch</packageName>
+    <label>YT Watch</label>
+    <icon>@mipmap/ic_launcher</icon>
+    <roundIcon>@mipmap/ic_launcher_round</roundIcon>
+    <theme>@style/Theme.YTWatch</theme>
+    <usesLibrary name="com.google.android.wearable" required="true" />
+    <metaData name="com.google.android.wearable.standalone" value="true" />
+</wearableAppConfiguration>
