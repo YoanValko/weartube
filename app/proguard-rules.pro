@@ -1,8 +1,5 @@
 # ProGuard rules for YT Watch
 
-# Keep application class
--keep class com.ytclient.watch.YTWatchApplication { *; }
-
 # Keep model classes for Parcelable/Serialization
 -keep class com.ytclient.watch.model.** { *; }
 

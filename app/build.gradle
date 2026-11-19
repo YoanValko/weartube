@@ -59,6 +59,10 @@ dependencies {
     
     // Material Design 3
     implementation 'androidx.compose.material3:material3:1.3.0'
+    // Material Icons Extended (includes Pause, Fullscreen, etc.)
+    implementation 'androidx.compose.material:material-icons-extended:1.6.7'
+    // UI Text for TextOverflow enum
+    implementation 'androidx.compose.ui:ui-text:1.6.7'
     
     // Wear OS Compose
     implementation 'androidx.wear.compose:compose-material:1.3.1'

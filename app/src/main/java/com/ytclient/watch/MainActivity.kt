@@ -36,6 +36,8 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Pause
+import androidx.compose.material.icons.filled.Fullscreen
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -49,7 +51,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.overflow.TextOverflow
 
 class MainActivity : ComponentActivity() {
     
@@ -88,7 +89,7 @@ fun YTWatchScreen() {
                 .fillMaxWidth()
                 .height(56.dp)
                 .padding(horizontal = 16.dp),
-            contentAlignment = Alignment.CenterVertically
+            contentAlignment = Alignment.Center
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -310,23 +311,27 @@ fun VideoCard(
                         .align(Alignment.Center)
                 )
                 
-                // Duration badge
+                // Duration badge - wrapped in Box for background
                 Box(
                     modifier = Modifier
                         .padding(4.dp)
                         .align(Alignment.BottomEnd)
                 ) {
-                    Text(
-                        text = video.duration,
-                        color = colors.onSurface,
-                        fontSize = 10.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                    .background(
-                        color = colors.surface.copy(alpha = 0.9f),
-                        shape = FoundationRoundedCornerShape(4.dp)
-                    )
-                    .padding(horizontal = 4.dp, vertical = 1.dp)
+                    Box(
+                        modifier = Modifier
+                            .background(
+                                color = colors.surface.copy(alpha = 0.9f),
+                                shape = FoundationRoundedCornerShape(4.dp)
+                            )
+                            .padding(horizontal = 4.dp, vertical = 1.dp)
+                    ) {
+                        Text(
+                            text = video.duration,
+                            color = colors.onSurface,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 }
             }
             
@@ -343,8 +348,7 @@ fun VideoCard(
                     color = colors.onSurface,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Medium,
-                    maxLines = 2,
-                    overflow = androidx.compose.ui.text.overflow.TextOverflow.Ellipsis
+                    maxLines = 2
                 )
                 
                 Spacer(modifier = Modifier.height(4.dp))
@@ -368,8 +372,7 @@ fun VideoCard(
                             text = video.channel,
                             color = colors.onSurfaceVariant,
                             fontSize = 12.sp,
-                            maxLines = 1,
-                            overflow = androidx.compose.ui.text.overflow.TextOverflow.Ellipsis
+                            maxLines = 1
                         )
                         
                         Row(
