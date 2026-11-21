@@ -97,6 +97,11 @@ class YouTubeStreamExtractor {
         var videoUrl: String? = null
         var audioUrl: String? = null
 
+        // Collect all video formats to pick the best one (prefer MP4 over WebM)
+        val videoFormats = mutableListOf<Pair<String, String>>() // Pair<mimeType, url>
+        var bestMp4Url: String? = null
+        var fallbackVideoUrl: String? = null
+
         if (adaptiveFormats != null) {
             for (i in 0 until adaptiveFormats.length()) {
                 val format = adaptiveFormats.getJSONObject(i)
@@ -105,13 +110,43 @@ class YouTubeStreamExtractor {
 
                 if (url.isEmpty()) continue
 
-                if (mimeType.contains("video") && videoUrl == null) {
-                    videoUrl = url
+                if (mimeType.contains("video")) {
+                    if (videoUrl == null) {
+                        fallbackVideoUrl = url // first video as fallback
+                    }
+                    // Prefer MP4 (avc1 or av01) over webm
+                    if (mimeType.contains("mp4") && (mimeType.contains("avc1") || mimeType.contains("av01"))) {
+                        bestMp4Url = url
+                    }
+                    videoFormats.add(mimeType to url)
                 } else if (mimeType.contains("audio") && audioUrl == null) {
                     audioUrl = url
                 }
+            }
+        }
 
-                if (videoUrl != null && audioUrl != null) break
+        // Prefer MP4, fallback to first video format
+        videoUrl = bestMp4Url ?: fallbackVideoUrl
+        
+        // Debug log
+        android.util.Log.d("WearTube", "Stream extractor: bestMp4Url=$bestMp4Url, fallbackVideoUrl=$fallbackVideoUrl, videoUrl=$videoUrl, audioUrl=$audioUrl, title=$title")
+
+        // Fallback: try single formats (combined video+audio)
+        if (videoUrl == null || audioUrl == null) {
+            val formats = streamingData?.optJSONArray("formats")
+            if (formats != null) {
+                for (i in 0 until formats.length()) {
+                    val format = formats.getJSONObject(i)
+                    val mimeType = format.optString("mimeType", "")
+                    val url = format.optString("url")
+                    if (url.isEmpty()) continue
+
+                    if (mimeType.contains("video") && videoUrl == null) {
+                        videoUrl = url
+                    } else if (mimeType.contains("audio") && audioUrl == null) {
+                        audioUrl = url
+                    }
+                }
             }
         }
 

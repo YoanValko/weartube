@@ -485,6 +485,9 @@ fun VideoPlayerScreen(
         try {
             val extractor = YouTubeStreamExtractor()
             val info = extractor.extractStream(videoId)
+            
+            // Debug log
+            android.util.Log.d("WearTube", "Stream info: videoUrl=${info.videoUrl}, audioUrl=${info.audioUrl}, title=${info.title}")
 
             if (info.videoUrl != null) {
                 // Build media item from stream URL
@@ -509,8 +512,10 @@ fun VideoPlayerScreen(
                 player.setMediaSource(mediaSource)
                 player.prepare()
                 player.playWhenReady = true
+            } else if (info.title != null) {
+                loadError = "This video cannot be played on Wear OS. The video may have age restrictions, region locks, or copyright restrictions that prevent playback via the YouTube API."
             } else {
-                loadError = "No playable streams found"
+                loadError = "No playable streams found for this video"
             }
         } catch (e: Exception) {
             loadError = "Failed to load video: ${e.message ?: "unknown error"}"
