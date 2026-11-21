@@ -3,7 +3,6 @@ package com.ytclient.watch
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.VideoView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -60,6 +59,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.viewinterop.AndroidView
 import coil3.compose.AsyncImage
+import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
+import androidx.media3.datasource.DefaultHttpDataSource
+import androidx.media3.datasource.HttpDataSource
+import androidx.media3.exoplayer.source.ProgressiveMediaSource
+
+data class VideoItem(
+    val id: String,
+    val title: String,
+    val channel: String,
+    val duration: String,
+    val views: String,
+    val age: String
+)
 
 class MainActivity : ComponentActivity() {
 
@@ -108,7 +123,8 @@ fun YTWatchScreen() {
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth()
@@ -430,15 +446,6 @@ fun VideoCard(
     }
 }
 
-data class VideoItem(
-    val id: String,
-    val title: String,
-    val channel: String,
-    val duration: String,
-    val views: String,
-    val age: String
-)
-
 @Composable
 fun VideoPlayerScreen(
     videoId: String,
@@ -454,30 +461,66 @@ fun VideoPlayerScreen(
     val colors = MaterialTheme.colorScheme
     var streamInfo by remember { mutableStateOf<YouTubeStreamExtractor.StreamInfo?>(null) }
     var loadError by remember { mutableStateOf<String?>(null) }
-    var videoViewError by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(true) }
 
-    var videoView by remember { mutableStateOf<VideoView?>(null) }
+    val context = LocalContext.current
+
+    // ExoPlayer instance - created once per screen
+    val player = remember {
+        ExoPlayer.Builder(context).build()
+    }
+
+    // Release player when composition leaves
+    androidx.compose.runtime.DisposableEffect(player) {
+        onDispose {
+            player.release()
+        }
+    }
 
     // Extract stream URL when videoId changes
     LaunchedEffect(videoId) {
-        streamInfo = null
         loadError = null
         isLoading = true
 
         try {
             val extractor = YouTubeStreamExtractor()
             val info = extractor.extractStream(videoId)
-            streamInfo = info
 
-            if (info.videoUrl == null) {
+            if (info.videoUrl != null) {
+                // Build media item from stream URL
+                val mediaItem = MediaItem.fromUri(info.videoUrl!!)
+                
+                // Create media source - ExoPlayer will auto-detect HLS/DASH/MP4
+                val dataSourceFactory = DefaultHttpDataSource.Factory()
+                    .setUserAgent("WearTube/1.0")
+                    .setAllowCrossProtocolRedirects(true)
+                    .setConnectTimeoutMs(30000)
+                    .setReadTimeoutMs(30000)
+                
+                // Use ProgressiveMediaSource for direct MP4, or let ExoPlayer auto-detect
+                val mediaSource = ProgressiveMediaSource.Factory(
+                    DefaultHttpDataSource.Factory()
+                        .setUserAgent("WearTube/1.0")
+                        .setAllowCrossProtocolRedirects(true)
+                        .setConnectTimeoutMs(30000)
+                        .setReadTimeoutMs(30000)
+                ).createMediaSource(MediaItem.fromUri(info.videoUrl!!))
+                
+                player.setMediaSource(mediaSource)
+                player.prepare()
+                player.playWhenReady = true
+            } else {
                 loadError = "No playable streams found"
-                videoViewError = true
             }
         } catch (e: Exception) {
             loadError = "Failed to load video: ${e.message ?: "unknown error"}"
         }
         isLoading = false
+    }
+
+    // Update play state
+    LaunchedEffect(isPlaying) {
+        player.playWhenReady = isPlaying
     }
 
     Box(
@@ -541,68 +584,21 @@ fun VideoPlayerScreen(
                     }
                 }
             }
-        } else if (videoViewError) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Error,
-                    contentDescription = "Error",
-                    tint = colors.error,
-                    modifier = Modifier.size(48.dp)
-                )
-                Text(
-                    text = "Cannot play video",
-                    color = colors.onSurface,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Stream could not be loaded",
-                    color = colors.onSurfaceVariant,
-                    fontSize = 12.sp,
-                    textAlign = TextAlign.Center
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Button(
-                    onClick = { videoViewError = false; isLoading = true },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(text = "Try Again")
-                }
-                Spacer(modifier = Modifier.height(12.dp))
-                TextButton(onClick = { onClose() }) {
-                    Text(text = "Back to Videos")
-                }
-            }
         } else {
-            // Show VideoView with stream URL
+            // Show ExoPlayer PlayerView
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
                 AndroidView(
                     factory = { ctx ->
-                        VideoView(ctx).apply {
-                            videoView = this
-                            streamInfo?.videoUrl?.let { url ->
-                                setVideoURI(android.net.Uri.parse(url))
-                                if (isPlaying) start()
-                            }
-                            setOnErrorListener { _, _, _ ->
-                                loadError = "Video playback failed"
-                                false
-                            }
+                        PlayerView(ctx).apply {
+                            this.player = player
+                            useController = true
+                            controllerShowTimeoutMs = 3000
                         }
                     },
-                    modifier = Modifier.fillMaxSize(),
-                    update = {
-                        streamInfo?.videoUrl?.let { url ->
-                            it.setVideoURI(android.net.Uri.parse(url))
-                            if (isPlaying) it.start() else it.pause()
-                        }
-                    }
+                    modifier = Modifier.fillMaxSize()
                 )
 
                 // Video title overlay at bottom
@@ -650,27 +646,22 @@ fun VideoPlayerScreen(
                     }
                 }
 
-                // Play/pause button overlay
+                // Play/pause button overlay (center)
                 Box(
                     modifier = Modifier
                         .fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    if (videoView == null || !videoView!!.isPlaying()) {
-                        Box(
-                            modifier = Modifier
-                                .size(56.dp)
-                                .background(Color(0xB3000000))
-                                .clip(CircleShape),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Filled.PlayArrow,
-                                contentDescription = "Play",
-                                tint = Color.White,
-                                modifier = Modifier.size(28.dp)
-                            )
-                        }
+                    IconButton(
+                        onClick = onPlayPause,
+                        modifier = Modifier.size(64.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
+                            contentDescription = if (isPlaying) "Pause" else "Play",
+                            tint = Color.White,
+                            modifier = Modifier.size(32.dp)
+                        )
                     }
                 }
             }

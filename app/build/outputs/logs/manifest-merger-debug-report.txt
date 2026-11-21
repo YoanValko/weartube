@@ -17,6 +17,16 @@ MERGED from [androidx.wear.compose:compose-material-core:1.3.1] C:\Users\Yoan_Va
 MERGED from [androidx.wear.compose:compose-navigation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\37949dad3af4b6679fcbe4018492ddad\transformed\jetified-compose-navigation-1.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\502a08efee9690fd0645b010d08c4a33\transformed\jetified-compose-material-1.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\95a300cd2ef05b5984c6017a4b4c1140\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-extractor:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1d067f4569aacb4fb02ba18f5086d224\transformed\jetified-media3-extractor-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-container:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\54ae4000cdf0cbc25c33e58ac0505bef\transformed\jetified-media3-container-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-datasource:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\7f05048d8847bb6f5db975769644c625\transformed\jetified-media3-datasource-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-decoder:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\288020ae5e1dd238b5f2d5676c129aef\transformed\jetified-media3-decoder-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-database:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\82b1d3782c32a6371916cb0a0520d5a0\transformed\jetified-media3-database-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6af2f11a8ebabbe3961f223d3618c0e9\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-exoplayer-dash:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c0724248eda382a833b7af7739c12742\transformed\jetified-media3-exoplayer-dash-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-hls:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\10fb4a247574222bad6d467d7f7fb7a3\transformed\jetified-media3-exoplayer-hls-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\423980367c166254da786e151751ec5e\transformed\jetified-media3-exoplayer-1.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\8998582b148c39aaead7a1e727577d41\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\34243f78a49b6f636f6b28a91094544a\transformed\navigation-common-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
@@ -63,6 +73,8 @@ MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\Yoan_V
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.6] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a6cc20bbd27c2162011fa24c604236b8\transformed\jetified-lifecycle-viewmodel-compose-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\db447a479e01c3682a2466d0fd157575\transformed\jetified-ui-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.media:media:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d2389fc03d59317b8190cc83425a3144\transformed\media-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\e545907840a8f37fa79d1d8405c331a1\transformed\recyclerview-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0759a32688a24ecc4395e1eb52a24dda\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\80d98f350f5b783409cd7c7694d31891\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f6e197e58ac0b5bc37cb99524efeb7c6\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -109,6 +121,10 @@ ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:8:5-67
 		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:9:5-79
+MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6af2f11a8ebabbe3961f223d3618c0e9\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6af2f11a8ebabbe3961f223d3618c0e9\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\423980367c166254da786e151751ec5e\transformed\jetified-media3-exoplayer-1.3.1\AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\423980367c166254da786e151751ec5e\transformed\jetified-media3-exoplayer-1.3.1\AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.FOREGROUND_SERVICE
@@ -258,6 +274,26 @@ MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.
 MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\502a08efee9690fd0645b010d08c4a33\transformed\jetified-compose-material-1.3.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\95a300cd2ef05b5984c6017a4b4c1140\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\95a300cd2ef05b5984c6017a4b4c1140\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1d067f4569aacb4fb02ba18f5086d224\transformed\jetified-media3-extractor-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1d067f4569aacb4fb02ba18f5086d224\transformed\jetified-media3-extractor-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\54ae4000cdf0cbc25c33e58ac0505bef\transformed\jetified-media3-container-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\54ae4000cdf0cbc25c33e58ac0505bef\transformed\jetified-media3-container-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\7f05048d8847bb6f5db975769644c625\transformed\jetified-media3-datasource-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\7f05048d8847bb6f5db975769644c625\transformed\jetified-media3-datasource-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\288020ae5e1dd238b5f2d5676c129aef\transformed\jetified-media3-decoder-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\288020ae5e1dd238b5f2d5676c129aef\transformed\jetified-media3-decoder-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\82b1d3782c32a6371916cb0a0520d5a0\transformed\jetified-media3-database-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\82b1d3782c32a6371916cb0a0520d5a0\transformed\jetified-media3-database-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6af2f11a8ebabbe3961f223d3618c0e9\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6af2f11a8ebabbe3961f223d3618c0e9\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c0724248eda382a833b7af7739c12742\transformed\jetified-media3-exoplayer-dash-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c0724248eda382a833b7af7739c12742\transformed\jetified-media3-exoplayer-dash-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\10fb4a247574222bad6d467d7f7fb7a3\transformed\jetified-media3-exoplayer-hls-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\10fb4a247574222bad6d467d7f7fb7a3\transformed\jetified-media3-exoplayer-hls-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\423980367c166254da786e151751ec5e\transformed\jetified-media3-exoplayer-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\423980367c166254da786e151751ec5e\transformed\jetified-media3-exoplayer-1.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\8998582b148c39aaead7a1e727577d41\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
@@ -350,6 +386,10 @@ MERGED from [androidx.compose.ui:ui-android:1.7.2] C:\Users\Yoan_Valko\.gradle\c
 MERGED from [androidx.compose.ui:ui-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\db447a479e01c3682a2466d0fd157575\transformed\jetified-ui-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\922a8aa3225ba1fa0def7c08d3a1232a\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.media:media:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d2389fc03d59317b8190cc83425a3144\transformed\media-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d2389fc03d59317b8190cc83425a3144\transformed\media-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\e545907840a8f37fa79d1d8405c331a1\transformed\recyclerview-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\e545907840a8f37fa79d1d8405c331a1\transformed\recyclerview-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0759a32688a24ecc4395e1eb52a24dda\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0759a32688a24ecc4395e1eb52a24dda\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\80d98f350f5b783409cd7c7694d31891\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41

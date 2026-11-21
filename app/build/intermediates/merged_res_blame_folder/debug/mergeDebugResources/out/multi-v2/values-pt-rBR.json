@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ytclient.watch.app-mergeDebugResources-64:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "com.ytclient.watch.app-mergeDebugResources-68:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Yoan_Valko\\.gradle\\caches\\8.9\\transforms\\db447a479e01c3682a2466d0fd157575\\transformed\\jetified-ui-release\\res\\values-pt-rBR\\values-pt-rBR.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ytclient.watch.app-mergeDebugResources-64:/values-land/values-land.xml",
+            "outputFile": "com.ytclient.watch.app-mergeDebugResources-68:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Yoan_Valko\\.gradle\\caches\\8.9\\transforms\\d77f4d934ce7ec5a2bec4a00c78c7ab9\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
