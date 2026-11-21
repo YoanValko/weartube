@@ -1,34 +1,34 @@
 [
     {
-        "merged": "com.ytclient.watch.app-debug-66:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/drawable_bg_round_watch.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/drawable/bg_round_watch.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/drawable_ic_youtube_logo.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/drawable/ic_youtube_logo.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/drawable_bg_round_watch.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/drawable/bg_round_watch.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/xml_wearable_app_desc.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/xml/wearable_app_desc.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/drawable_splash_screen.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/drawable/splash_screen.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/xml_wearable_app_desc.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/xml/wearable_app_desc.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/drawable/ic_launcher_background.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.ytclient.watch.app-debug-66:/drawable_splash_screen.xml.flat",
-        "source": "com.ytclient.watch.app-main-68:/drawable/splash_screen.xml"
+        "merged": "com.ytclient.watch.app-debug-65:/drawable_ic_youtube_logo.xml.flat",
+        "source": "com.ytclient.watch.app-main-67:/drawable/ic_youtube_logo.xml"
     }
 ]

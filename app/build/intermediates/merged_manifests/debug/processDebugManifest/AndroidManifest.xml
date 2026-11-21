@@ -20,6 +20,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.wearable.permission.URI_REDIRECT_TO_REMOTE" />
 
     <permission
         android:name="com.ytclient.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -28,7 +29,7 @@
     <uses-permission android:name="com.ytclient.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.ytclient.watch.YTWatchApplication"
+        android:name="android.app.Application"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -40,14 +41,14 @@
         android:theme="@style/Theme.YTWatch" >
         <uses-library
             android:name="com.google.android.wearable"
-            android:required="true" />
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
         <activity
-            android:name="com.ytclient.watch.ui.MainActivity"
+            android:name="com.ytclient.watch.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -76,25 +77,6 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.ytclient.watch.media.YTMediaSessionService"
-            android:exported="true"
-            android:foregroundServiceType="mediaPlayback" >
-            <intent-filter>
-                <action android:name="androidx.media3.session.MediaSessionService" />
-                <action android:name="android.media.browse.MediaBrowserService" />
-            </intent-filter>
-        </service>
-
-        <receiver
-            android:name="com.ytclient.watch.media.MediaButtonReceiver"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MEDIA_BUTTON" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ytclient.watch.app-mergeDebugResources-64:/values-km/values-km.xml",
+            "outputFile": "com.ytclient.watch.app-mergeDebugResources-63:/values-km/values-km.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Yoan_Valko\\.gradle\\caches\\8.9\\transforms\\4b3e62ad52b2bc17e5d9a5953656e400\\transformed\\core-1.13.1\\res\\values-km\\values-km.xml",

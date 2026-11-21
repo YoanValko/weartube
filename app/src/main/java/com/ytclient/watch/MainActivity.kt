@@ -3,6 +3,7 @@ package com.ytclient.watch
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.VideoView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -56,6 +57,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.viewinterop.AndroidView
 
 class MainActivity : ComponentActivity() {
     
@@ -430,47 +432,38 @@ fun VideoPlayerScreen(
     context: android.content.Context = LocalContext.current
 ) {
     val colors = MaterialTheme.colorScheme
-    var openError by remember { mutableStateOf<String?>(null) }
-    var isOpening by remember { mutableStateOf(true) }
-
-    // Try to open video in YouTube app (not browser)
+    var streamInfo by remember { mutableStateOf<YouTubeStreamExtractor.StreamInfo?>(null) }
+    var loadError by remember { mutableStateOf<String?>(null) }
+    var isLoading by remember { mutableStateOf(true) }
+    
+    // VideoView reference
+    var videoView by remember { mutableStateOf<VideoView?>(null) }
+    
+    // Extract stream URL when videoId changes
     LaunchedEffect(videoId) {
-        isOpening = true
-        openError = null
+        streamInfo = null
+        loadError = null
+        isLoading = true
+        
         try {
-            // Try YouTube app deep link first
-            val youtubeIntent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://$videoId")).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                setPackage("com.google.android.youtube")
+            val extractor = YouTubeStreamExtractor()
+            val info = extractor.extractStream(videoId)
+            streamInfo = info
+            
+            if (info.videoUrl == null) {
+                loadError = "No playable streams found"
             }
-            if (context.packageManager.resolveActivity(youtubeIntent, 0) != null) {
-                context.startActivity(youtubeIntent)
-                isOpening = false
-                return@LaunchedEffect
-            }
-
-            // Fallback: try regular YouTube URL intent
-            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=$videoId")).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            }
-            if (context.packageManager.resolveActivity(webIntent, 0) != null) {
-                context.startActivity(webIntent)
-                isOpening = false
-                return@LaunchedEffect
-            }
-
-            openError = "YouTube app not installed. Please watch on your phone."
         } catch (e: Exception) {
-            openError = "Cannot open video: ${e.message ?: "unknown error"}"
+            loadError = "Failed to load video: ${e.message ?: "unknown error"}"
         }
-        isOpening = false
+        isLoading = false
     }
-
+    
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        if (isOpening) {
+        if (isLoading) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -480,12 +473,12 @@ fun VideoPlayerScreen(
                     modifier = Modifier.size(32.dp)
                 )
                 Text(
-                    text = "Opening in YouTube app...",
+                    text = "Loading video...",
                     color = colors.onSurfaceVariant,
                     fontSize = 14.sp
                 )
             }
-        } else if (openError != null) {
+        } else if (loadError != null) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -497,19 +490,19 @@ fun VideoPlayerScreen(
                     modifier = Modifier.size(48.dp)
                 )
                 Text(
-                    text = "Cannot open video",
+                    text = "Cannot play video",
                     color = colors.onSurface,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Medium
                 )
                 Text(
-                    text = openError!!,
+                    text = loadError!!,
                     color = colors.onSurfaceVariant,
                     fontSize = 12.sp,
-                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = { openError = null; isOpening = true }) {
+                Button(onClick = { loadError = null; isLoading = true }) {
                     Text(text = "Try Again")
                 }
                 Spacer(modifier = Modifier.height(8.dp))
@@ -518,27 +511,64 @@ fun VideoPlayerScreen(
                 }
             }
         } else {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+            // Show VideoView with stream URL
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
             ) {
-                Icon(
-                    imageVector = Icons.Filled.PlayArrow,
-                    contentDescription = "Playing",
-                    tint = colors.primary,
-                    modifier = Modifier.size(48.dp)
+                AndroidView(
+                    factory = { ctx ->
+                        VideoView(ctx).apply {
+                            videoView = this
+                            streamInfo?.videoUrl?.let { url ->
+                                setVideoURI(android.net.Uri.parse(url))
+                                if (isPlaying) start()
+                            }
+                        }
+                    },
+                    modifier = Modifier.fillMaxSize(),
+                    update = {
+                        streamInfo?.videoUrl?.let { url ->
+                            it.setVideoURI(android.net.Uri.parse(url))
+                            if (isPlaying) it.start() else it.pause()
+                        }
+                    }
                 )
-                Text(
-                    text = "Opening video...",
-                    color = colors.onSurface,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Medium
-                )
-                Text(
-                    text = "Video will open in the YouTube app",
-                    color = colors.onSurfaceVariant,
-                    fontSize = 12.sp
-                )
+                
+                // Close button overlay
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    contentAlignment = Alignment.TopStart
+                ) {
+                    IconButton(onClick = onClose) {
+                        Icon(
+                            imageVector = Icons.Filled.Close,
+                            contentDescription = "Close",
+                            tint = colors.onSurface,
+                            modifier = Modifier.size(28.dp)
+                        )
+                    }
+                }
+                
+                // Play/pause button overlay
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    if (videoView == null || !videoView!!.isPlaying()) {
+                        IconButton(onClick = onPlayPause) {
+                            Icon(
+                                imageVector = Icons.Filled.PlayArrow,
+                                contentDescription = "Play",
+                                tint = Color.White,
+                                modifier = Modifier.size(48.dp)
+                            )
+                        }
+                    }
+                }
             }
         }
     }

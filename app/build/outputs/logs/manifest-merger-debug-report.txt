@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-77:12
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:2:1-60:12
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c234a65e6818ad05c90529492ba7f6f5\transformed\jetified-datastore-preferences-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-android:1.1.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\35adad48e29016d984dea5c000a61c83\transformed\jetified-datastore-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-core-android:1.1.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\71b990f39b6abf552e867a873d6e070f\transformed\jetified-datastore-core-release\AndroidManifest.xml:2:1-7:12
@@ -13,7 +13,6 @@ MERGED from [androidx.wear.compose:compose-material-core:1.3.1] C:\Users\Yoan_Va
 MERGED from [androidx.wear.compose:compose-navigation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\37949dad3af4b6679fcbe4018492ddad\transformed\jetified-compose-navigation-1.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\502a08efee9690fd0645b010d08c4a33\transformed\jetified-compose-material-1.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.webkit:webkit:1.8.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\09ffb32fb188146257d3f4d62274a04b\transformed\webkit-1.8.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\8998582b148c39aaead7a1e727577d41\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\34243f78a49b6f636f6b28a91094544a\transformed\navigation-common-ktx-2.8.3\AndroidManifest.xml:2:1-7:12
@@ -21,13 +20,13 @@ MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.3] C:\Users\Yoan_Val
 MERGED from [androidx.navigation:navigation-runtime:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\393674aa42c7227a4fb36f38abdcb687\transformed\navigation-runtime-2.8.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\994e5e5c392e30ae9edeff5be4682372\transformed\navigation-common-2.8.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-compose:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\849c04873251585f0d8bfe48b5f25d89\transformed\jetified-navigation-compose-2.8.3\AndroidManifest.xml:2:1-7:12
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a41e77e749d93fac985f1c86e28f0aa8\transformed\jetified-glide-4.16.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a7b80a6292795ca8022344732276fce6\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9420552899f5ea9ea634cdf96a325ddf\transformed\jetified-activity-1.9.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\e1bd34cb995f235daad2ea65f26a87f6\transformed\jetified-activity-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\eb18be07a932d28f5f61d0a4d5078d4b\transformed\jetified-material3-release\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.compose.material:material-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4d6c02cdf093bfe2417bd06a20b2605e\transformed\jetified-material-release\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.material:material-icons-core-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\756e07206baff44bcb4502817f374b58\transformed\jetified-material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\66fffba4c141583198e49bafec1c306e\transformed\jetified-material-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d6259e821151af81478525c38fe1451c\transformed\jetified-material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3736833191129017e51bfe5f6ad08a08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0cd3f0802e87abdbf69c72ac813c6ce7\transformed\jetified-material-ripple-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\2c8bc1f0b167bf93ca1e84c3d765b470\transformed\jetified-foundation-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\15b973da08780963ffc0073e1f83168a\transformed\jetified-foundation-layout-release\AndroidManifest.xml:2:1-7:12
@@ -37,9 +36,9 @@ MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.2] C:\Users\Yoan_Va
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\80f2616d2c0c1fdc13e01a0951217467\transformed\jetified-ui-tooling-preview-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.ui:ui-text-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\5235b3015a7ba081d801af7265285561\transformed\jetified-ui-text-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1408d5ead5f34bac0fb08d42963519d1\transformed\jetified-ui-unit-release\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\abcae4d39787ad2bfb45ae41eb715b7d\transformed\jetified-ui-geometry-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-util-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\968a82a82cc9feeff310b8de4059a283\transformed\jetified-ui-util-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.activity:activity-compose:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a3fa74ad3a334f2fa9863503af6b63a6\transformed\jetified-activity-compose-1.9.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\fa168e9096886241adbafc86fd9d98db\transformed\jetified-savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
@@ -73,12 +72,10 @@ MERGED from [androidx.compose.runtime:runtime-android:1.7.2] C:\Users\Yoan_Valko
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\dd69d0f3ac1b43e385bfb8c760220da1\transformed\jetified-annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\90c62c5336ff4f219b0c6ba44df16520\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3853df2b161b1ed393786d01db7a2723\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c82d70b322b41d0885aeb0f8aef5465a\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6afe06e822d42d263e69e8748393750a\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a559cfa711065f4881dd220d64804a1f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\2fc19ff6febc803bfd30bfd7176f4b61\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 	package
 		INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml
@@ -128,9 +125,13 @@ uses-permission#android.permission.VIBRATE
 ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:14:5-66
 	android:name
 		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:14:22-63
+uses-permission#com.google.android.wearable.permission.URI_REDIRECT_TO_REMOTE
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:15:5-101
+	android:name
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:15:22-98
 application
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:16:5-75:19
-INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:16:5-75:19
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:17:5-58:19
+INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:17:5-58:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\f3115fe219c5d9f35004135861cc915a\transformed\jetified-lifecycle-process-2.8.4\AndroidManifest.xml:23:5-33:19
@@ -141,116 +142,86 @@ MERGED from [androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\t
 MERGED from [androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a559cfa711065f4881dd220d64804a1f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a559cfa711065f4881dd220d64804a1f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
 		INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4b3e62ad52b2bc17e5d9a5953656e400\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:21:9-54
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:22:9-54
 	tools:targetApi
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:24:9-29
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:19:9-43
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:23:9-45
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:24:9-45
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:17:9-43
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:18:9-47
 uses-library#com.google.android.wearable
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:26:9-28:39
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:required
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:27:13-55
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:28:13-55
 meta-data#com.google.android.wearable.standalone
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:30:9-32:36
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:31:9-33:36
 	android:value
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:32:13-33
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:33:13-33
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:31:13-66
-activity#com.ytclient.watch.ui.MainActivity
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:34:9-56:20
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:32:13-66
+activity#com.ytclient.watch.MainActivity
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:35:9-57:20
 	android:screenOrientation
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:39:13-49
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:40:13-49
 	android:label
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:37:13-45
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:38:13-45
 	android:windowSoftInputMode
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:40:13-55
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:41:13-55
 	android:exported
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:36:13-36
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:37:13-36
 	android:theme
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:38:13-49
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:39:13-49
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:35:13-44
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:36:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:42:13-45:29
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:43:13-46:29
 action#android.intent.action.MAIN
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:43:17-69
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:17-69
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:45:17-77
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:45:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:m.youtube.com+data:host:www.youtube.com+data:host:youtube.com+data:scheme:https+data:scheme:https+data:scheme:https+data:scheme:vnd.youtube
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:47:13-55:29
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:48:13-56:29
 action#android.intent.action.VIEW
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:17-76
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:17-76
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:49:27-73
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:27-73
 category#android.intent.category.BROWSABLE
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:17-78
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-78
 	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:50:27-75
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:27-75
 data
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:17-54
+ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:17-54
 	android:host
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:46-76
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:53:46-76
 	android:scheme
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:51:23-51
-service#com.ytclient.watch.media.YTMediaSessionService
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:58:9-66:19
-	android:exported
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:60:13-36
-	android:foregroundServiceType
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:61:13-58
-	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:59:13-56
-intent-filter#action:name:android.media.browse.MediaBrowserService+action:name:androidx.media3.session.MediaSessionService
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:62:13-65:29
-action#androidx.media3.session.MediaSessionService
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:63:17-86
-	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:63:25-83
-action#android.media.browse.MediaBrowserService
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:64:17-83
-	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:64:25-80
-receiver#com.ytclient.watch.media.MediaButtonReceiver
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:68:9-74:20
-	android:exported
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:70:13-36
-	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:69:13-54
-intent-filter#action:name:android.intent.action.MEDIA_BUTTON
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:71:13-73:29
-action#android.intent.action.MEDIA_BUTTON
-ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:72:17-77
-	android:name
-		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:72:25-74
+		ADDED from D:\YTClientWatch\app\src\main\AndroidManifest.xml:52:23-51
 uses-sdk
 INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\YTClientWatch\app\src\main\AndroidManifest.xml
@@ -273,8 +244,6 @@ MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.
 MERGED from [androidx.wear.compose:compose-material:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\502a08efee9690fd0645b010d08c4a33\transformed\jetified-compose-material-1.3.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.wear.compose:compose-foundation:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\667798a71377e5049272d54e2d129b67\transformed\jetified-compose-foundation-1.3.1\AndroidManifest.xml:5:5-44
-MERGED from [androidx.webkit:webkit:1.8.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\09ffb32fb188146257d3f4d62274a04b\transformed\webkit-1.8.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.webkit:webkit:1.8.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\09ffb32fb188146257d3f4d62274a04b\transformed\webkit-1.8.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\23fe360a2a6867cfae8a5d3ed5978727\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\8998582b148c39aaead7a1e727577d41\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
@@ -289,8 +258,6 @@ MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\Yoan_Valko\.g
 MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\994e5e5c392e30ae9edeff5be4682372\transformed\navigation-common-2.8.3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-compose:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\849c04873251585f0d8bfe48b5f25d89\transformed\jetified-navigation-compose-2.8.3\AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-compose:2.8.3] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\849c04873251585f0d8bfe48b5f25d89\transformed\jetified-navigation-compose-2.8.3\AndroidManifest.xml:5:5-44
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a41e77e749d93fac985f1c86e28f0aa8\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a41e77e749d93fac985f1c86e28f0aa8\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a7b80a6292795ca8022344732276fce6\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a7b80a6292795ca8022344732276fce6\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9420552899f5ea9ea634cdf96a325ddf\transformed\jetified-activity-1.9.0\AndroidManifest.xml:20:5-44
@@ -299,10 +266,12 @@ MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Yoan_Valko\.gradle\c
 MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\e1bd34cb995f235daad2ea65f26a87f6\transformed\jetified-activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\eb18be07a932d28f5f61d0a4d5078d4b\transformed\jetified-material3-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\eb18be07a932d28f5f61d0a4d5078d4b\transformed\jetified-material3-release\AndroidManifest.xml:20:5-44
-MERGED from [androidx.compose.material:material-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4d6c02cdf093bfe2417bd06a20b2605e\transformed\jetified-material-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\4d6c02cdf093bfe2417bd06a20b2605e\transformed\jetified-material-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-icons-core-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\756e07206baff44bcb4502817f374b58\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-icons-core-android:1.6.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\756e07206baff44bcb4502817f374b58\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\66fffba4c141583198e49bafec1c306e\transformed\jetified-material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\66fffba4c141583198e49bafec1c306e\transformed\jetified-material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d6259e821151af81478525c38fe1451c\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d6259e821151af81478525c38fe1451c\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3736833191129017e51bfe5f6ad08a08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3736833191129017e51bfe5f6ad08a08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0cd3f0802e87abdbf69c72ac813c6ce7\transformed\jetified-material-ripple-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\0cd3f0802e87abdbf69c72ac813c6ce7\transformed\jetified-material-ripple-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\2c8bc1f0b167bf93ca1e84c3d765b470\transformed\jetified-foundation-release\AndroidManifest.xml:5:5-44
@@ -321,12 +290,12 @@ MERGED from [androidx.compose.ui:ui-text-android:1.7.2] C:\Users\Yoan_Valko\.gra
 MERGED from [androidx.compose.ui:ui-text-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\5235b3015a7ba081d801af7265285561\transformed\jetified-ui-text-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1408d5ead5f34bac0fb08d42963519d1\transformed\jetified-ui-unit-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\1408d5ead5f34bac0fb08d42963519d1\transformed\jetified-ui-unit-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\abcae4d39787ad2bfb45ae41eb715b7d\transformed\jetified-ui-geometry-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\abcae4d39787ad2bfb45ae41eb715b7d\transformed\jetified-ui-geometry-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-util-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\968a82a82cc9feeff310b8de4059a283\transformed\jetified-ui-util-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-util-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\968a82a82cc9feeff310b8de4059a283\transformed\jetified-ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d993fa9b07f94855f4d10d0f6d24eef8\transformed\jetified-ui-graphics-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3af63b8fa2897668adc0609764e5ca0d\transformed\jetified-ui-tooling-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.9.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a3fa74ad3a334f2fa9863503af6b63a6\transformed\jetified-activity-compose-1.9.0\AndroidManifest.xml:5:5-44
@@ -393,18 +362,14 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Yoan_Valko\.gr
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\90c62c5336ff4f219b0c6ba44df16520\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\d096d82cd49aade44a07fde0b0358a94\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3853df2b161b1ed393786d01db7a2723\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\3853df2b161b1ed393786d01db7a2723\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c82d70b322b41d0885aeb0f8aef5465a\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\c82d70b322b41d0885aeb0f8aef5465a\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6afe06e822d42d263e69e8748393750a\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\6afe06e822d42d263e69e8748393750a\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a559cfa711065f4881dd220d64804a1f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\a559cfa711065f4881dd220d64804a1f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\9b014a8ec83cd2e1af4620bc51f94308\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\14eb84fcff4b7dbc3870c62233097307\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\2fc19ff6febc803bfd30bfd7176f4b61\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Yoan_Valko\.gradle\caches\8.9\transforms\2fc19ff6febc803bfd30bfd7176f4b61\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
