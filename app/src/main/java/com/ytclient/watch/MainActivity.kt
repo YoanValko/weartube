@@ -6,6 +6,7 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -78,6 +79,10 @@ fun YTWatchScreen() {
     var selectedTab by remember { mutableStateOf(0) }
     
     val tabs = listOf("Home", "Subscriptions", "Search", "Library")
+    
+    BackHandler(enabled = showPlayer) {
+        showPlayer = false
+    }
     
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -440,9 +445,32 @@ fun VideoPlayerScreen(
                         loadWithOverviewMode = true
                         userAgentString = "Mozilla/5.0 (Linux; Android 10; Pixel Watch) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36"
                     }
-                    webViewClient = WebViewClient()
-                    webChromeClient = WebChromeClient()
-                    loadUrl("https://www.youtube.com/embed/$videoId?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1&fs=0")
+                    webViewClient = object : WebViewClient() {
+                        override fun onPageFinished(view: WebView?, url: String?) {
+                            super.onPageFinished(view, url)
+                            // Inject CSS to hide YouTube branding and controls we don't need
+                            view?.loadUrl("javascript:(function() { " +
+                                "var style = document.createElement('style'); " +
+                                "style.innerHTML = '.ytp-chrome-bottom { display: none !important; } .ytp-chrome-top { display: none !important; }'; " +
+                                "document.head.appendChild(style); " +
+                                "})()")
+                        }
+                    }
+                    webChromeClient = object : WebChromeClient() {
+                        override fun onShowCustomView(view: android.view.View?, callback: WebChromeClient.CustomViewCallback?) {
+                            super.onShowCustomView(view, callback)
+                        }
+                        override fun onHideCustomView() {
+                            super.onHideCustomView()
+                        }
+                    }
+                    settings.apply {
+                        setAllowFileAccess(false)
+                        setAllowContentAccess(true)
+                        setAllowUniversalAccessFromFileURLs(false)
+                        setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW)
+                    }
+                    loadUrl("https://www.youtube.com/embed/$videoId?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1&fs=1")
                 }
             },
             modifier = Modifier.fillMaxSize()
