@@ -1,10 +1,8 @@
 package com.ytclient.watch
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -25,11 +23,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape as FoundationRoundedCornerShape
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -39,8 +40,10 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.Fullscreen
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -51,6 +54,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.draw.clip
 
 class MainActivity : ComponentActivity() {
@@ -422,122 +426,119 @@ fun VideoPlayerScreen(
     onPlayPause: () -> Unit,
     onClose: () -> Unit,
     onFullscreen: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    context: android.content.Context = LocalContext.current
 ) {
     val colors = MaterialTheme.colorScheme
-    
+    var openError by remember { mutableStateOf<String?>(null) }
+    var isOpening by remember { mutableStateOf(true) }
+
+    // Try to open video in YouTube app (not browser)
+    LaunchedEffect(videoId) {
+        isOpening = true
+        openError = null
+        try {
+            // Try YouTube app deep link first
+            val youtubeIntent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://$videoId")).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                setPackage("com.google.android.youtube")
+            }
+            if (context.packageManager.resolveActivity(youtubeIntent, 0) != null) {
+                context.startActivity(youtubeIntent)
+                isOpening = false
+                return@LaunchedEffect
+            }
+
+            // Fallback: try regular YouTube URL intent
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=$videoId")).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            if (context.packageManager.resolveActivity(webIntent, 0) != null) {
+                context.startActivity(webIntent)
+                isOpening = false
+                return@LaunchedEffect
+            }
+
+            openError = "YouTube app not installed. Please watch on your phone."
+        } catch (e: Exception) {
+            openError = "Cannot open video: ${e.message ?: "unknown error"}"
+        }
+        isOpening = false
+    }
+
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.TopStart
+        contentAlignment = Alignment.Center
     ) {
-        // WebView for YouTube embed
-        androidx.compose.ui.viewinterop.AndroidView(
-            factory = { ctx ->
-                WebView(ctx).apply {
-                    settings.apply {
-                        javaScriptEnabled = true
-                        domStorageEnabled = true
-                        mediaPlaybackRequiresUserGesture = false
-                        setSupportZoom(false)
-                        builtInZoomControls = false
-                        displayZoomControls = false
-                        useWideViewPort = true
-                        loadWithOverviewMode = true
-                        userAgentString = "Mozilla/5.0 (Linux; Android 10; Pixel Watch) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36"
-                    }
-                    webViewClient = object : WebViewClient() {
-                        override fun onPageFinished(view: WebView?, url: String?) {
-                            super.onPageFinished(view, url)
-                            // Inject CSS to hide YouTube branding and controls we don't need
-                            view?.loadUrl("javascript:(function() { " +
-                                "var style = document.createElement('style'); " +
-                                "style.innerHTML = '.ytp-chrome-bottom { display: none !important; } .ytp-chrome-top { display: none !important; }'; " +
-                                "document.head.appendChild(style); " +
-                                "})()")
-                        }
-                    }
-                    webChromeClient = object : WebChromeClient() {
-                        override fun onShowCustomView(view: android.view.View?, callback: WebChromeClient.CustomViewCallback?) {
-                            super.onShowCustomView(view, callback)
-                        }
-                        override fun onHideCustomView() {
-                            super.onHideCustomView()
-                        }
-                    }
-                    settings.apply {
-                        setAllowFileAccess(false)
-                        setAllowContentAccess(true)
-                        setAllowUniversalAccessFromFileURLs(false)
-                        setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW)
-                    }
-                    loadUrl("https://www.youtube.com/embed/$videoId?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1&fs=1")
-                }
-            },
-            modifier = Modifier.fillMaxSize()
-        )
-        
-        // Controls overlay
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Bottom
-        ) {
-            // Progress bar
-            LinearProgressIndicator(
-                modifier = Modifier.fillMaxWidth(),
-                color = colors.primary,
-                trackColor = colors.onSurfaceVariant.copy(alpha = 0.3f)
-            )
-            
-            // Controls
-            Surface(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
+        if (isOpening) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(24.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        IconButton(onClick = onClose) {
-                            Icon(
-                                imageVector = Icons.Filled.Close,
-                                contentDescription = "Close",
-                                tint = colors.onSurface,
-                                modifier = Modifier.size(28.dp)
-                            )
-                        }
-                        
-                        IconButton(onClick = onPlayPause) {
-                            Icon(
-                                imageVector = if (isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                                contentDescription = if (isPlaying) "Pause" else "Play",
-                                tint = colors.onSurface,
-                                modifier = Modifier.size(36.dp)
-                            )
-                        }
-                    }
-                    
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        IconButton(onClick = onFullscreen) {
-                            Icon(
-                                imageVector = Icons.Filled.Fullscreen,
-                                contentDescription = "Fullscreen",
-                                tint = colors.onSurface,
-                                modifier = Modifier.size(28.dp)
-                            )
-                        }
-                    }
+                CircularProgressIndicator(
+                    color = colors.primary,
+                    modifier = Modifier.size(32.dp)
+                )
+                Text(
+                    text = "Opening in YouTube app...",
+                    color = colors.onSurfaceVariant,
+                    fontSize = 14.sp
+                )
+            }
+        } else if (openError != null) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Error,
+                    contentDescription = "Error",
+                    tint = colors.error,
+                    modifier = Modifier.size(48.dp)
+                )
+                Text(
+                    text = "Cannot open video",
+                    color = colors.onSurface,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium
+                )
+                Text(
+                    text = openError!!,
+                    color = colors.onSurfaceVariant,
+                    fontSize = 12.sp,
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Button(onClick = { openError = null; isOpening = true }) {
+                    Text(text = "Try Again")
                 }
+                Spacer(modifier = Modifier.height(8.dp))
+                TextButton(onClick = { onClose() }) {
+                    Text(text = "Back to Videos")
+                }
+            }
+        } else {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.PlayArrow,
+                    contentDescription = "Playing",
+                    tint = colors.primary,
+                    modifier = Modifier.size(48.dp)
+                )
+                Text(
+                    text = "Opening video...",
+                    color = colors.onSurface,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium
+                )
+                Text(
+                    text = "Video will open in the YouTube app",
+                    color = colors.onSurfaceVariant,
+                    fontSize = 12.sp
+                )
             }
         }
     }
