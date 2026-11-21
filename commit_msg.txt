@@ -1,8 +1,0 @@
-Fix video playback using TubeRepair API
-
-- Replaced WebView-based player (crash on Wear OS signed image)
-- Added YouTubeStreamExtractor using TubeRepair API to get direct MP4 stream URLs
-- Uses Android's built-in VideoView for playback
-- Falls back gracefully if stream extraction fails
-- Removed OkHttp/Gson deps, uses java.net.HttpURLConnection only
-- Build succeeds, app no longer crashes on video tap

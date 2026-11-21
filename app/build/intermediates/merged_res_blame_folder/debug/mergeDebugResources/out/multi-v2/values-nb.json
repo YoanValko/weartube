@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ytclient.watch.app-mergeDebugResources-63:/values-nb/values-nb.xml",
+            "outputFile": "com.ytclient.watch.app-mergeDebugResources-64:/values-nb/values-nb.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Yoan_Valko\\.gradle\\caches\\8.9\\transforms\\eb18be07a932d28f5f61d0a4d5078d4b\\transformed\\jetified-material3-release\\res\\values-nb\\values-nb.xml",

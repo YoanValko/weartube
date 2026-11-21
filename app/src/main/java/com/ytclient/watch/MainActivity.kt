@@ -8,7 +8,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,7 +24,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape as FoundationRoundedCornerShape
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -58,9 +59,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.viewinterop.AndroidView
+import coil3.compose.AsyncImage
 
 class MainActivity : ComponentActivity() {
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -80,16 +82,18 @@ class MainActivity : ComponentActivity() {
 fun YTWatchScreen() {
     val context = LocalContext.current
     var showPlayer by remember { mutableStateOf(false) }
-    var currentVideoId by remember { mutableStateOf("dQw4w9WgXcQ") }
+    var currentVideoId by remember { mutableStateOf("") }
+    var currentVideoTitle by remember { mutableStateOf("") }
+    var currentVideoChannel by remember { mutableStateOf("") }
     var isPlaying by remember { mutableStateOf(true) }
     var selectedTab by remember { mutableStateOf(0) }
-    
+
     val tabs = listOf("Home", "Subscriptions", "Search", "Library")
-    
+
     BackHandler(enabled = showPlayer) {
         showPlayer = false
     }
-    
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top
@@ -104,18 +108,25 @@ fun YTWatchScreen() {
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Row(
-                    verticalAlignment = Alignment.CenterVertically
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    Icon(
-                        imageVector = Icons.Filled.PlayArrow,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(28.dp)
-                    )
+                    Box(
+                        modifier = Modifier
+                            .size(32.dp)
+                            .background(MaterialTheme.colorScheme.primaryContainer, CircleShape)
+                            .clip(CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.PlayArrow,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = "YT Watch",
@@ -124,11 +135,10 @@ fun YTWatchScreen() {
                         fontWeight = FontWeight.Bold
                     )
                 }
-                
+
                 if (!showPlayer) {
                     Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        modifier = Modifier.fillMaxWidth()
                     ) {
                         IconButton(onClick = { /* Search */ }) {
                             Icon(
@@ -142,11 +152,13 @@ fun YTWatchScreen() {
                 }
             }
         }
-        
+
         // Main content
         if (showPlayer) {
             VideoPlayerScreen(
                 videoId = currentVideoId,
+                videoTitle = currentVideoTitle,
+                videoChannel = currentVideoChannel,
                 isPlaying = isPlaying,
                 onPlayPause = { isPlaying = !isPlaying },
                 onClose = { showPlayer = false },
@@ -155,22 +167,26 @@ fun YTWatchScreen() {
             )
         } else {
             when (selectedTab) {
-                0 -> HomeScreen(onVideoClick = { videoId ->
+                0 -> HomeScreen(onVideoClick = { videoId, title, channel ->
                     currentVideoId = videoId
+                    currentVideoTitle = title
+                    currentVideoChannel = channel
                     showPlayer = true
                     isPlaying = true
                 })
                 1 -> PlaceholderScreen(title = "Subscriptions")
                 2 -> PlaceholderScreen(title = "Search")
                 3 -> PlaceholderScreen(title = "Library")
-                else -> HomeScreen(onVideoClick = { videoId ->
+                else -> HomeScreen(onVideoClick = { videoId, title, channel ->
                     currentVideoId = videoId
+                    currentVideoTitle = title
+                    currentVideoChannel = channel
                     showPlayer = true
                     isPlaying = true
                 })
             }
         }
-        
+
         // Bottom navigation (only when player not visible)
         if (!showPlayer) {
             BottomNavigationBar(
@@ -183,24 +199,27 @@ fun YTWatchScreen() {
 }
 
 @Composable
-fun HomeScreen(onVideoClick: (String) -> Unit) {
+fun HomeScreen(onVideoClick: (String, String, String) -> Unit) {
     val videos = listOf(
         VideoItem("dQw4w9WgXcQ", "Never Gonna Give You Up", "Rick Astley", "3:33", "1.4B views", "4 years ago"),
         VideoItem("jNQXAC9IVRw", "Me at the zoo", "jawed", "0:19", "300M views", "19 years ago"),
         VideoItem("kJQP7kiw5Fk", "Despacito", "Luis Fonsi", "4:42", "8.3B views", "7 years ago"),
         VideoItem("fJ9rUzIMcZQ", "Shape of You", "Ed Sheeran", "3:53", "6.1B views", "7 years ago"),
         VideoItem("kXYiU_JCYtU", "See You Again", "Wiz Khalifa", "3:50", "6.2B views", "7 years ago"),
+        VideoItem("9bZkp7q19f0", "PSY - GANGNAM STYLE", "PsyOfficial", "4:13", "4.6B views", "12 years ago"),
+        VideoItem("2Vv-BfVoq4g", "Shape of You - Live", "Ed Sheeran", "4:26", "23M views", "7 years ago"),
+        VideoItem("kffacxfA7G4", "Baby Shark Dance", "Pinkfong", "3:15", "13B views", "5 years ago"),
     )
-    
+
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 16.dp, vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(videos) { video ->
             VideoCard(
                 video = video,
-                onClick = { onVideoClick(video.id) }
+                onClick = { onVideoClick(video.id, video.title, video.channel) }
             )
         }
     }
@@ -216,6 +235,12 @@ fun PlaceholderScreen(title: String) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            Icon(
+                imageVector = Icons.Filled.PlayArrow,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(48.dp)
+            )
             Text(
                 text = title,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -276,7 +301,8 @@ fun BottomNavigationBar(
                         Text(
                             text = tab,
                             color = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = 10.sp
+                            fontSize = 10.sp,
+                            fontWeight = if (selected) FontWeight.Medium else FontWeight.Normal
                         )
                     }
                 }
@@ -291,120 +317,112 @@ fun VideoCard(
     onClick: () -> Unit
 ) {
     val colors = MaterialTheme.colorScheme
-    
+    val thumbnailUrl = "https://i.ytimg.com/vi/${video.id}/hqdefault.jpg"
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp)
-            .background(colors.surfaceContainer, FoundationRoundedCornerShape(12.dp))
-            .clip(FoundationRoundedCornerShape(12.dp))
+            .padding(horizontal = 8.dp, vertical = 6.dp)
             .clickable(onClick = onClick)
     ) {
-        Row(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically
         ) {
-            // Thumbnail placeholder
+            // Thumbnail with duration badge
             Box(
                 modifier = Modifier
-                    .size(120.dp, 68.dp)
+                    .fillMaxWidth()
+                    .aspectRatio(16f / 9f)
                     .background(colors.surfaceContainerHighest, FoundationRoundedCornerShape(8.dp))
                     .clip(FoundationRoundedCornerShape(8.dp))
             ) {
-                Icon(
-                    imageVector = Icons.Filled.PlayArrow,
-                    contentDescription = "Video thumbnail",
-                    tint = colors.onSurfaceVariant.copy(alpha = 0.3f),
-                    modifier = Modifier
-                        .size(32.dp)
-                        .align(Alignment.Center)
+                AsyncImage(
+                    model = thumbnailUrl,
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize()
                 )
-                
-                // Duration badge - wrapped in Box for background
+
                 Box(
                     modifier = Modifier
-                        .padding(4.dp)
                         .align(Alignment.BottomEnd)
+                        .padding(4.dp)
                 ) {
                     Box(
                         modifier = Modifier
-                            .background(
-                                color = colors.surface.copy(alpha = 0.9f),
-                                shape = FoundationRoundedCornerShape(4.dp)
-                            )
+                            .background(Color(0xB3000000))
                             .padding(horizontal = 4.dp, vertical = 1.dp)
+                            .clip(FoundationRoundedCornerShape(2.dp))
                     ) {
                         Text(
                             text = video.duration,
-                            color = colors.onSurface,
+                            color = Color.White,
                             fontSize = 10.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
                 }
             }
-            
+
+            Spacer(modifier = Modifier.height(8.dp))
+
             // Video info
-            Column(
+            Row(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 12.dp, end = 12.dp)
-                    .weight(1f),
-                verticalArrangement = Arrangement.Center
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                Text(
-                    text = video.title,
-                    color = colors.onSurface,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Medium,
-                    maxLines = 2
-                )
-                
-                Spacer(modifier = Modifier.height(4.dp))
-                
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    // Channel avatar placeholder
-                    Box(
-                        modifier = Modifier
-                            .size(24.dp)
-                            .background(colors.surfaceContainerHighest, CircleShape)
+                Box(
+                    modifier = Modifier
+                        .size(28.dp)
+                        .background(colors.surfaceContainerHighest, CircleShape)
+                    ) {
+                    Icon(
+                        imageVector = Icons.Filled.PlayArrow,
+                        contentDescription = null,
+                        tint = colors.primary,
+                        modifier = Modifier.size(14.dp).align(Alignment.Center)
                     )
-                    
-                    Spacer(modifier = Modifier.width(8.dp))
-                    
-                    Column(
-                        verticalArrangement = Arrangement.spacedBy(2.dp)
+                }
+
+                Column(
+                    modifier = Modifier.weight(1f).padding(horizontal = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(2.dp)
+                ) {
+                    Text(
+                        text = video.title,
+                        color = colors.onSurface,
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 2,
+                        lineHeight = 18.sp
+                    )
+                    Text(
+                        text = video.channel,
+                        color = colors.onSurfaceVariant,
+                        fontSize = 11.sp,
+                        maxLines = 1
+                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(2.dp)
                     ) {
                         Text(
-                            text = video.channel,
+                            text = video.views,
                             color = colors.onSurfaceVariant,
-                            fontSize = 12.sp,
-                            maxLines = 1
+                            fontSize = 10.sp
                         )
-                        
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                text = video.views,
-                                color = colors.onSurfaceVariant,
-                                fontSize = 11.sp
-                            )
-                            Text(
-                                text = " • ",
-                                color = colors.onSurfaceVariant.copy(alpha = 0.6f),
-                                fontSize = 11.sp
-                            )
-                            Text(
-                                text = video.age,
-                                color = colors.onSurfaceVariant.copy(alpha = 0.6f),
-                                fontSize = 11.sp
-                            )
-                        }
+                        Text(
+                            text = " • ",
+                            color = colors.onSurfaceVariant.copy(alpha = 0.5f),
+                            fontSize = 10.sp
+                        )
+                        Text(
+                            text = video.age,
+                            color = colors.onSurfaceVariant.copy(alpha = 0.5f),
+                            fontSize = 10.sp
+                        )
                     }
                 }
             }
@@ -424,6 +442,8 @@ data class VideoItem(
 @Composable
 fun VideoPlayerScreen(
     videoId: String,
+    videoTitle: String,
+    videoChannel: String,
     isPlaying: Boolean,
     onPlayPause: () -> Unit,
     onClose: () -> Unit,
@@ -434,31 +454,32 @@ fun VideoPlayerScreen(
     val colors = MaterialTheme.colorScheme
     var streamInfo by remember { mutableStateOf<YouTubeStreamExtractor.StreamInfo?>(null) }
     var loadError by remember { mutableStateOf<String?>(null) }
+    var videoViewError by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(true) }
-    
-    // VideoView reference
+
     var videoView by remember { mutableStateOf<VideoView?>(null) }
-    
+
     // Extract stream URL when videoId changes
     LaunchedEffect(videoId) {
         streamInfo = null
         loadError = null
         isLoading = true
-        
+
         try {
             val extractor = YouTubeStreamExtractor()
             val info = extractor.extractStream(videoId)
             streamInfo = info
-            
+
             if (info.videoUrl == null) {
                 loadError = "No playable streams found"
+                videoViewError = true
             }
         } catch (e: Exception) {
             loadError = "Failed to load video: ${e.message ?: "unknown error"}"
         }
         isLoading = false
     }
-    
+
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -479,6 +500,48 @@ fun VideoPlayerScreen(
                 )
             }
         } else if (loadError != null) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(24.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Error,
+                        contentDescription = "Error",
+                        tint = colors.error,
+                        modifier = Modifier.size(48.dp)
+                    )
+                    Text(
+                        text = "Cannot play video",
+                        color = colors.onSurface,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = loadError!!,
+                        color = colors.onSurfaceVariant,
+                        fontSize = 12.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Button(
+                        onClick = { loadError = null; isLoading = true },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(text = "Try Again")
+                    }
+                    Spacer(modifier = Modifier.height(12.dp))
+                    TextButton(onClick = { onClose() }) {
+                        Text(text = "Back to Videos")
+                    }
+                }
+            }
+        } else if (videoViewError) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -492,20 +555,23 @@ fun VideoPlayerScreen(
                 Text(
                     text = "Cannot play video",
                     color = colors.onSurface,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Medium
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = loadError!!,
+                    text = "Stream could not be loaded",
                     color = colors.onSurfaceVariant,
                     fontSize = 12.sp,
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = { loadError = null; isLoading = true }) {
+                Button(
+                    onClick = { videoViewError = false; isLoading = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
                     Text(text = "Try Again")
                 }
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 TextButton(onClick = { onClose() }) {
                     Text(text = "Back to Videos")
                 }
@@ -524,6 +590,10 @@ fun VideoPlayerScreen(
                                 setVideoURI(android.net.Uri.parse(url))
                                 if (isPlaying) start()
                             }
+                            setOnErrorListener { _, _, _ ->
+                                loadError = "Video playback failed"
+                                false
+                            }
                         }
                     },
                     modifier = Modifier.fillMaxSize(),
@@ -534,7 +604,35 @@ fun VideoPlayerScreen(
                         }
                     }
                 )
-                
+
+                // Video title overlay at bottom
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.BottomCenter)
+                        .padding(16.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = videoTitle,
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 2,
+                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            text = videoChannel,
+                            color = Color(0xFFFFFFFF).copy(alpha = 0.8f),
+                            fontSize = 12.sp,
+                            maxLines = 1
+                        )
+                    }
+                }
+
                 // Close button overlay
                 Box(
                     modifier = Modifier
@@ -546,12 +644,12 @@ fun VideoPlayerScreen(
                         Icon(
                             imageVector = Icons.Filled.Close,
                             contentDescription = "Close",
-                            tint = colors.onSurface,
+                            tint = Color.White,
                             modifier = Modifier.size(28.dp)
                         )
                     }
                 }
-                
+
                 // Play/pause button overlay
                 Box(
                     modifier = Modifier
@@ -559,12 +657,18 @@ fun VideoPlayerScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     if (videoView == null || !videoView!!.isPlaying()) {
-                        IconButton(onClick = onPlayPause) {
+                        Box(
+                            modifier = Modifier
+                                .size(56.dp)
+                                .background(Color(0xB3000000))
+                                .clip(CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
                             Icon(
                                 imageVector = Icons.Filled.PlayArrow,
                                 contentDescription = "Play",
                                 tint = Color.White,
-                                modifier = Modifier.size(48.dp)
+                                modifier = Modifier.size(28.dp)
                             )
                         }
                     }
